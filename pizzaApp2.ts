@@ -3,6 +3,12 @@ type Pizza = {
     price: number
 }
 
+type Order = {
+    id: number
+    pizza: Pizza
+    status: string
+}
+
 const menu: Pizza[] = [
     { name: "Margherita", price: 8 },
     { name: "Pepperoni", price: 10 },
@@ -12,9 +18,9 @@ const menu: Pizza[] = [
 
 let cashInRegister = 100
 let nextOrderId = 1
-const orderQueue = []
+const orderQueue: Order[] = []
 
-function addNewPizza(pizzaObj: Pizza) {
+function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
 }
 
@@ -32,6 +38,12 @@ function placeOrder(pizzaName: string) {
 
 function completeOrder(orderId: number) {
     const order = orderQueue.find(order => order.id === orderId)
+    if (typeof order === 'undefined') {
+        const msg = 'order is undefined'
+        console.error(msg)
+        throw new Error(msg)
+        return
+    }
     order.status = "completed"
     return order
 }
