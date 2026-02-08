@@ -39,16 +39,9 @@ type ObjectWithNameArray = Array<{ name: string }>
 let x2: ObjectWithNameArray = [{ name: "John" }, { name: "Jane" }]
 console.log(x2.map(x => x.name));
 
-
-const menu = [
-	{ name: "Margherita", price: 8 },
-	{ name: "Pepperoni", price: 10 },
-	{ name: "Hawaiian", price: 10 },
-	{ name: "Veggie", price: 9 },
-]
-function addNewPizza(name:string, price: number) {
-	menu.push({name: name, price: price})
+type UserRole = 'guest'|'hostess'
+type UserRole3 = {
+	pers: 'guest'|'hostess'|'cook'
 }
-addNewPizza("Cheese", 12)
-console.log(menu)
-console.error('hi')
+let x3: UserRole = 'guest'
+

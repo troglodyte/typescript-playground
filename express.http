@@ -1,0 +1,52 @@
+GET http://localhost:3000/
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 170
+etag: W/"aa-z+ebXSEdArbZ+EXlN/WQjf6HV8c"
+date: Thu, 22 Jan 2026 13:55:31 GMT
+connection: close
+###
+GET http://localhost:3000/schools
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 31
+etag: W/"1f-OJrTYW2fCRaNV/FVGYuSYlEDVcU"
+date: Thu, 22 Jan 2026 14:01:00 GMT
+connection: close
+/*
+
+*/
+###
+GET http://localhost:3000/schools/1234/students
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 37
+etag: W/"25-UXi2DP9df/zhswl+43mvWtaSItI"
+date: Thu, 22 Jan 2026 14:01:14 GMT
+connection: close
+###
+GET http://localhost:3000/users
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 23
+etag: W/"17-dz3lQFWsvaILP0XWy2YesfdbyNA"
+date: Thu, 22 Jan 2026 13:53:02 GMT
+connection: close
+###
+GET http://localhost:3000/users/1/1/posts
+
+HTTP/1.1 404  - Not Found
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 1188
+etag: W/"4a4-XDArfCGi2BU6nCj1HhgPAWO3oSw"
+date: Thu, 22 Jan 2026 13:55:10 GMT
+connection: close
