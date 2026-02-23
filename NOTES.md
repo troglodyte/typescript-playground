@@ -37,3 +37,15 @@ https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html#generi
 
 ### Coursera 
 https://www.coursera.org/learn/learn-typescript/home/module/1
+
+
+# Commands
+npx tsc file.ts <-- nodes built in(?) typescript compiler
+^ compiles to JS - creates file.js
+
+npx tsc // this alone will throw all js in a dist (per tsconfig file)
+
+# Packages
+`@` are scoped packages
+eg: `@types/express` `@types/cors`
+

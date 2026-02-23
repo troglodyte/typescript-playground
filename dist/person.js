@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let person1 = {
     name: "Joe",
     age: 42,
@@ -15,4 +13,5 @@ let person2 = {
     age: 66,
     isStudent: false
 };
+export {};
 //# sourceMappingURL=person.js.map

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class UserAccount {
     name;
     id;
@@ -22,4 +20,5 @@ function wrapInArray(obj) {
 let x2 = [{ name: "John" }, { name: "Jane" }];
 console.log(x2.map(x => x.name));
 let x3 = 'guest';
+export {};
 //# sourceMappingURL=a.js.map

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let idCounter = 0;
 const menu = [
     { id: 0, name: "Margherita", price: 8 },
@@ -7,9 +5,26 @@ const menu = [
     { id: 2, name: "Hawaiian", price: 10 },
     { id: 3, name: "Veggie", price: 9 },
 ];
+function identity(arg) {
+    return arg;
+}
+function loggingIdentity(arg) {
+    console.log(arg.length);
+    return arg;
+}
+function addToArray(array, item) {
+    array.push(item);
+    return array;
+}
 let cashInRegister = 100;
 let nextOrderId = 1;
+let nextPizzaId = menu.length;
 const orderQueue = [];
+// example usage:
+addToArray(menu, { id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 12 });
+menu[2] && addToArray(orderQueue, { id: nextOrderId++, pizza: menu[2], status: "ordered" });
+console.log(menu);
+console.log(orderQueue);
 function addNewPizza(pizzaObj) {
     menu.push({ id: idCounter++, ...pizzaObj });
 }
@@ -52,4 +67,5 @@ completeOrder(1);
 console.log("Menu:", menu);
 console.log("Cash in register:", cashInRegister);
 console.log("Order queue:", orderQueue);
+export {};
 //# sourceMappingURL=pizzaApp2.js.map

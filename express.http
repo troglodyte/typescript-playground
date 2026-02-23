@@ -17,9 +17,16 @@ content-length: 31
 etag: W/"1f-OJrTYW2fCRaNV/FVGYuSYlEDVcU"
 date: Thu, 22 Jan 2026 14:01:00 GMT
 connection: close
-/*
+###
+GET http://localhost:8000/
 
-*/
+HTTP/1.1 200  - OK
+x-powered-by: Express
+content-type: application/json; charset=utf-8
+content-length: 115
+etag: W/"73-xNzWlmXFWDbQ/X/rqWjRYb2Zdgo"
+date: Mon, 23 Feb 2026 14:04:42 GMT
+connection: close
 ###
 GET http://localhost:3000/schools/1234/students
 
