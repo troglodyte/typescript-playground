@@ -1,27 +1,24 @@
 // npx tsc --esModuleInterop express.ts && mv express.js express.cjs && node express.cjs
 import express from 'express'
-import type {Express, Request, Response} from 'express'
+import type {Express, Request, Response, NextFunction} from 'express'
 import {Pet, pets} from './data/pets'
 import cors from 'cors'
+import { petRouter } from './routes/pets.routes'
 
 const PORT = 8000
 const app:Express = express()
 app.use(cors())
 
-app.get('/', (req: Request, res: Response<Pet[]>)=> {
-  res.json(pets)
+app.use((
+  req: Request, 
+  res: Response, next: NextFunction
+) => {
+  res.setHeader('Content-Type', 'application/json');
+  next();
 })
 
+app.get('/pet', petRouter)
 
-/*
-CHALLENGE: Type and complete the `/:id` route
-    1. Type everything in the `.find()` callback function
-    2. Type the `pet` variable (keeping in mind that
-       we might not find a pet with that ID)
-    3. Handle what happens if we don't find a
-       pet with the provided ID
-    4. Type the Response generic
-*/
 app.get('/:id', (req:Request<{id:string}>, res:Response<Pet|{message:string}>) => {
   const {id} = req.params;
   //const targetPet = pets.find(p => p.id === parseInt(`${id}`))

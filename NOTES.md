@@ -49,3 +49,8 @@ npx tsc // this alone will throw all js in a dist (per tsconfig file)
 `@` are scoped packages
 eg: `@types/express` `@types/cors`
 
+### convert fonts to woff2
+`woff2_compress font-name.ttf`
+
+### convert png to ico format
+`magick squaredPaintingsIcon.png squaredPaintingsIcon.ico`
